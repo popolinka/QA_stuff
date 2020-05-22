@@ -8,12 +8,14 @@ from pages.search import DuckDuckGoSearchPage
 # from selenium.web.driver.support import expected_conditions as EC
 # NOTE: Using explict waits would imply that we should rid of all implicit waits, and make 'em all explicit. see config.json
 
+@pytest.mark.parametrize('Phrase', ['popolin', 'python', 'lamb of god'])
+
 def test_basic_duckduckgo_search(browser):
 
 	search_page = DuckDuckGoSearchPage(browser)
 	result_page = DuckDuckGoResultPage(browser)
 
-	Phrase = 'Popolin'
+	# Phrase = 'Popolin'
 
     # Given the DuckDuckGo home page is displayed
     search_page.load()
