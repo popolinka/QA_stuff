@@ -4,15 +4,15 @@ import time
 url = "https://api.dev.kitchenstories.io/api"
 
 """
-Login with a user
+Login with a user beforehand (via Postman or similar) and get your token, no need to have auth process here.
 """
 
 headers = {
     'Content-Type': 'application/json'
 }
 
-token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1bHRyb24iLCJ1c2VyIjoiNGUwMmQ2NDAtMWZhYS00MTZmLWIyYTAtZmJjMWU1MDI2NDJkIn0.C9ZIXK2gYg4XxNBnNIkcnaOOq7N46r11uKycoUy17Fg"
-# get it from Postman
+token = "YOUR TOKEN HERE"
+# can get it from Postman
 
 headers['Authorization'] = "Bearer {}".format(token)  # "Bearer" redundant
 headers['Accept-language'] = "en"
@@ -23,7 +23,7 @@ get external recipes
 
 urlExternalRecipe = url + "/users/me/external-recipe-preview/?url={}"
 
-with open('/Users/orkunkadioglu/PycharmProjects/recipeLinkCrawler/kochBar_links.txt') as file_in:
+with open('~/PATH') as file_in:
     lines = []
     for line in file_in:
         lines.append(line)
