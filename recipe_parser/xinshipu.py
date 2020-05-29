@@ -13,15 +13,6 @@ def getlinks(pageNum):
     for link in soup.find_all("a", {"class": "no-overflow"}):
         xinshipu_links.append("https://www.xinshipu.com" + link.get('href'))
 
-    # parent = soup.find_all("div", {"class": "info pure-u"})
-    # for divs in parent:
-    #     for link in divs.find_all("a"):
-    #         if re.search("\A/recipe", link.get('href')):  # removing additional useless stuff
-    #             xinshipu_links.append("https://www.xiachufang.com" + link.get('href'))
-    #         else:
-    #             pass
-
-
 for i in range(1, 11):
     getlinks(i)
     time.sleep(2)
@@ -29,6 +20,3 @@ for i in range(1, 11):
 with open('xinshipu_links.txt', 'w+') as f:
     for recipes in xinshipu_links:
         f.write('%s\n' % recipes)
-
-
-
