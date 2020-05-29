@@ -1,1 +1,1 @@
-crawler for recipe links from different websites
+minimal crawlers for recipe links from different websites
